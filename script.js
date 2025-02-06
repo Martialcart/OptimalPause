@@ -3,21 +3,29 @@ const timerPause = document.getElementById("timerPause");
 const performance = document.getElementById("performance");
 
 let workStartTime = 0;
-let working = false;
-let pausing = false;
+let pausing = true;
 
 
 
-
-document.getElementById("btnWork").addEventListener('click', () => {
-    if (!working) {
-	console.log("click work when not working");
+document.getElementById("btnController").addEventListener('click', () => {
+    if (pausing) {
+	console.log("click while pausing");
+	startWork();
+	
+    } else {
+	console.log("click while working"); 
+	startPause();
     }
-   console.log("work button pressed"); 
 });
-document.getElementById("btnPause").addEventListener('click', () => {
-   console.log("pause button pressed"); 
-});
+
 document.getElementById("btnSettings").addEventListener('click', () => {
    console.log("settings button pressed"); 
 });
+
+function startWork() {
+    pausing = false;
+}
+
+function startPause() {
+    pausing = true;
+}
