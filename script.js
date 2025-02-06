@@ -1,6 +1,13 @@
+const btnController = document.getElementById('btnController');
+
 const timerWork = document.getElementById("timerWork");
 const timerPause = document.getElementById("timerPause");
 const performance = document.getElementById("performance");
+
+const btnState = {
+    p: "Pause",
+    w: "Jobb"
+};
 
 let workStartTime = 0;
 let pausing = true;
@@ -23,9 +30,11 @@ document.getElementById("btnSettings").addEventListener('click', () => {
 });
 
 function startWork() {
+    btnController.textContent = btnState.p ;
     pausing = false;
 }
 
 function startPause() {
+    btnController.textContent = btnState.w
     pausing = true;
 }
