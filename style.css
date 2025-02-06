@@ -2,3 +2,40 @@ body {
     background-color: blue;
 }
 
+header {
+    display: flex;
+    justify-content: center;
+    min-width: fit-content;
+}
+
+main {
+    display: flex;
+    /*justify-content: space-between;*/
+}
+
+button {
+    min-height: 10px; /*minum recommended height*/
+}
+
+.noMargin {
+    margin: 0;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+    min-width: fit-content;
+}
+
+.screen {
+    display: flex;
+    flex-wrap: wrap;
+    width: 70vw;
+    justify-content: space-around;
+}
+
+.metric {
+    display: flex;
+    flex-direction: column;
+}
