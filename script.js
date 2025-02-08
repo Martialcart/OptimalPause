@@ -15,8 +15,9 @@ let pauseFactor = pause / work;
 
 let intervalWork, intervalPause;
 let workStartTime = 0;
-let pauseTimeLeft = 0;
 let elapsedTime = 0;
+let pauseSurplus = 0;
+let pauseEnd = 0;
 let pausing = true;
 
 
@@ -44,18 +45,28 @@ function startWork() {
 function workLoop() {
     elapsedTime = Date.now() - workStartTime;
     timerWork.textContent = toDigits(elapsedTime);
-    timerPause.textContent = toDigits(calcPause(elapsedTime));
+    timerPause.textContent = toDigits(calcPause(elapsedTime) + pauseSurplus);
 }
+
 
 function startPause() {
     btnController.textContent = btnState.w;
     pausing = true;
     clearInterval(intervalWork);
+    pauseSurplus = calcPause(elapsedTime) + pauseSurplus;
+    pauseEnd = Date.now() + pauseSurplus;
     intervalPause = setInterval(pauseLoop, 1000);
 }
 
-function pauseLoop() {
-
+function pauseLoop() { 
+    pauseSurplus = pauseEnd - Date.now()
+    if(pauseSurplus <= 0) {
+	clearInterval(intervalPause);
+	timerPause.textContent = "00:00:00";
+    }
+    else {
+    timerPause.textContent = toDigits(pauseSurplus);
+    }
 }
 
 function toDigits(ms) {
