@@ -21,7 +21,6 @@ let pauseEnd = 0;
 let pausing = true;
 
 
-
 document.getElementById("btnController").addEventListener('click', () => {
     if (pausing) {
 	startWork();
@@ -63,6 +62,8 @@ function pauseLoop() {
     if(pauseSurplus <= 0) {
 	clearInterval(intervalPause);
 	timerPause.textContent = "00:00:00";
+	timerWork.textContent = "00:00:00";
+	pauseSurplus = 0;
     }
     else {
     timerPause.textContent = toDigits(pauseSurplus);
