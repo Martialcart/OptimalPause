@@ -15,6 +15,9 @@ main {
 
 button {
     min-height: 10px; /*minum recommended height*/
+    min-width: fit-content;
+    height: 50%;
+    font-size: 2em;
 }
 
 .noMargin {
@@ -26,6 +29,7 @@ button {
     flex-direction: column;
     width: 30vw;
     min-width: fit-content;
+    justify-content: space-around;
 }
 
 .screen {
@@ -33,9 +37,14 @@ button {
     flex-wrap: wrap;
     width: 70vw;
     justify-content: space-around;
+    gap: 1em;
 }
 
 .metric {
     display: flex;
     flex-direction: column;
+}
+
+time {
+    font-size: 3em;
 }
