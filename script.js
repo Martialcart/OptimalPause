@@ -12,6 +12,7 @@ const btnState = {
 let work = 57;
 let pause = 17;
 let pauseFactor = pause / work;
+let minToBrainzero = 30 * 4:
 
 let intervalWork, intervalPause;
 let workStartTime = 0;
@@ -81,4 +82,10 @@ function d(s) {
 
 function calcPause(timeWorked) {
     return timeWorked * pauseFactor;
+}
+
+function getPerfomance(pauseLeftTotal) {
+    let timeWorked = pauseLeftTotal/pauseFactor
+    let percentage = timeWorked/(minToBrainzero * 60 * 1000);
+    return (1 - percentage * 100);
 }
