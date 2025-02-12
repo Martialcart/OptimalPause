@@ -12,7 +12,7 @@ const btnState = {
 let work = 57;
 let pause = 17;
 let pauseFactor = pause / work;
-let minToBrainzero = 30 * 4:
+let minToBrainzero = 30 * 4;
 
 let intervalWork, intervalPause;
 let workStartTime = 0;
@@ -46,6 +46,7 @@ function workLoop() {
     elapsedTime = Date.now() - workStartTime;
     timerWork.textContent = toDigits(elapsedTime);
     timerPause.textContent = toDigits(calcPause(elapsedTime) + pauseSurplus);
+    performance.textContent = getPerfomance((calcPause(elapsedTime)) + pauseSurplus);
 }
 
 
@@ -64,10 +65,12 @@ function pauseLoop() {
 	clearInterval(intervalPause);
 	timerPause.textContent = "00:00:00";
 	timerWork.textContent = "00:00:00";
+	performance.textContent = "100%";
 	pauseSurplus = 0;
     }
     else {
     timerPause.textContent = toDigits(pauseSurplus);
+    performance.textContent = getPerfomance(pauseSurplus);
     }
 }
 
@@ -87,5 +90,5 @@ function calcPause(timeWorked) {
 function getPerfomance(pauseLeftTotal) {
     let timeWorked = pauseLeftTotal/pauseFactor
     let percentage = timeWorked/(minToBrainzero * 60 * 1000);
-    return (1 - percentage * 100);
+    return ((1 - percentage) * 100).toFixed(2) + "%";
 }
