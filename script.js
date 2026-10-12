@@ -114,6 +114,8 @@ function d(s) {
 
 function calcPause(timeWorked) {
     return timeWorked * pauseFactor;
+    //console.log("timeWokred", timeWorked);
+    //return Math.pow(0.01 * timeWorked, pauseFactor);
 }
 
 function getPerfomance(pauseLeftTotal) {
