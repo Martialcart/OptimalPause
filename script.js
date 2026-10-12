@@ -95,7 +95,7 @@ function pauseLoop() {
 	timerPause.textContent = "00:00:00";
 	timerWork.textContent = "00:00:00";
 	performance.textContent = "100%";
-	pauseSurplus = 0;
+	pauseSurplus = 0.0;
     }
     else {
     timerPause.textContent = toDigits(pauseSurplus);
