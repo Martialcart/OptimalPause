@@ -45,7 +45,22 @@ btnController.addEventListener('click', () => {
 });
 
 document.getElementById("btnSettings").addEventListener('click', () => {
-   console.log("settings button pressed"); 
+    console.log("settings button pressed");  
+    screenContainer.classList.toggle('hidden');
+    settingContainer.classList.toggle('hidden');
+});
+
+
+inputWorkFactor.addEventListener("blur", () => {
+    console.log("Workfactor input lost focus");  
+    work = inputWorkFactor.value;
+    pauseFactor = getPauseFactor(work, pause);
+});
+
+inputPauseFactor.addEventListener("blur", () => {
+    console.log("Workfactor input lost focus");  
+    pause = inputPauseFactor.value;
+    pauseFactor = getPauseFactor(work, pause);
 });
 
 function startWork() {
