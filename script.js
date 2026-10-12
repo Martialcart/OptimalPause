@@ -18,7 +18,7 @@ const btnState = {
 
 let work = 57;
 let pause = 17;
-let pauseFactor = pause / work;
+let pauseFactor = getPauseFactor(work, pause);
 let minToBrainzero = 30 * 4;
 
 let intervalWork, intervalPause;
@@ -27,6 +27,13 @@ let elapsedTime = 0;
 let pauseSurplus = 0;
 let pauseEnd = 0;
 let pausing = true;
+
+function getPauseFactor(w, p) {
+    //let pse = 2 - (Math.log(p) / Math.log(w));
+    let pse = p / w;
+    console.log(pse)
+    return pse;
+}
 
 
 document.getElementById("btnController").addEventListener('click', () => {
