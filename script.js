@@ -4,6 +4,13 @@ const timerWork = document.getElementById("timerWork");
 const timerPause = document.getElementById("timerPause");
 const performance = document.getElementById("performance");
 
+const inputWorkFactor = document.getElementById("inputWorkFactor");
+const inputPauseFactor = document.getElementById("inputPauseFactor");
+const inputMinToBrianZeroFactor = document.getElementById("inputPauseFactor");
+
+const settingContainer = document.getElementById("settingContainer");
+const screenContainer = document.getElementById("screenContainer");
+
 const btnState = {
     p: "Pause",
     w: "Jobb"
