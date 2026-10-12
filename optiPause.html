@@ -16,7 +16,7 @@
 	    <button id="btnController">Jobb</button>
 	    <button id="btnSettings">Innstillinger</button>
 	</nav>
-	<section class="screen">
+	<section id="screenContainer" class="screen">
 	    <div class="metric">
 		<label for="timerWork">jobbet</label>
 		<time id="timerWork">00:00:00</time>
@@ -29,6 +29,16 @@
 		<label"performance">ytelse</label>
 		<p id="performance" class="noMargin">100%</p>
 	    </div>
+	</section>
+	<section id="settingContainer" class="screen hidden">
+		<div class="metric">
+		    <label for="inputWorkFactor">Jobbfaktor</label>
+		    <input value="57" id="inputWorkFactor" type="number">
+		</div>
+		<div class="metric">
+		    <label for="inputPauseFactor">Pausefaktor</label>
+		    <input value="17" id="inputPauseFactor" type="pauseFactor">
+		</div>
 	</section>
     </main>
     <footer>
