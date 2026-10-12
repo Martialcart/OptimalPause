@@ -36,7 +36,7 @@ function getPauseFactor(w, p) {
 }
 
 
-document.getElementById("btnController").addEventListener('click', () => {
+btnController.addEventListener('click', () => {
     if (pausing) {
 	startWork();
     } else {
