@@ -20,6 +20,10 @@ button {
     font-size: 2em;
 }
 
+time {
+    font-size: 3em;
+}
+
 .noMargin {
     margin: 0;
 }
@@ -45,6 +49,6 @@ button {
     flex-direction: column;
 }
 
-time {
-    font-size: 3em;
+.hidden {
+    display: none;
 }
