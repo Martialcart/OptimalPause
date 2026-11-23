@@ -17,7 +17,15 @@ button {
     min-height: 10px; /*minum recommended height*/
     min-width: fit-content;
     height: 50%;
+    border-radius: 0.5em;
+    background: white;
     font-size: 2em;
+}
+button:hover {
+    background: wheat;
+}
+button:active {
+    box-shadow: 0 0 4px black;
 }
 
 time {
